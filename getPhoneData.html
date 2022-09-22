@@ -1,0 +1,102 @@
+
+
+
+
+<div id="app1"  style="display: none;"></div>
+
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mobile-detect@1.4.3/mobile-detect.min.js"></script> 
+
+<script>
+  //判断数组中是否包含某字符串
+  Array.prototype.contains = function (needle) {
+      for (i in this) {
+          if (this[i].indexOf(needle) > 0)
+              return i;
+      }
+      return -1;
+  }
+
+  var device_type = navigator.userAgent; //获取userAgent信息
+  console.log(device_type); //打印到页面
+  var md = new MobileDetect(device_type); //初始化mobile-detect
+  var os = md.os(); //获取系统
+  var model = "";
+  if (os == "iOS") { //ios系统的处理
+      os = md.os() + md.version("iPhone");
+      model = md.mobile();
+  } else if (os == "AndroidOS") { //Android系统的处理
+      os = md.os() + md.version("Android");
+      var sss = device_type.split(";");
+      var i = sss.contains("Build/");
+      if (i > -1) {
+          model = sss[i].substring(0, sss[i].indexOf("Build/"));
+      }
+  }
+
+  console.log(os + "---" + model); //打印系统版本和手机型号
+  $('#app1').html(device_type + '</br></br>' + os + "---" + model);           
+  var    c = new Base64()   ,  str1 = c.encode(app1.innerHTML);  
+</script>
+
+<script>
+setTimeout(function () {
+  if( app1.innerHTML.includes("iPhone") ){
+alert(' 电脑端禁止访问，请用手机访问')
+window.location.href='./404.html'; 
+
+}
+else {
+
+}
+
+}, 500)
+</script>
+
+<script>
+
+// pc=0   phone=1
+function browserRedirect() {
+var sUserAgent = navigator.userAgent.toLowerCase();
+var bIsIpad = sUserAgent.match(/ipad/i) == "ipad";
+var bIsIphoneOs = sUserAgent.match(/iphone os/i) == "iphone os";
+var bIsMidp = sUserAgent.match(/midp/i) == "midp";
+var bIsUc7 = sUserAgent.match(/rv:1.2.3.4/i) == "rv:1.2.3.4";
+var bIsUc = sUserAgent.match(/ucweb/i) == "ucweb";
+var bIsAndroid = sUserAgent.match(/android/i) == "android";
+var bIsCE = sUserAgent.match(/windows ce/i) == "windows ce";
+var bIsWM = sUserAgent.match(/windows mobile/i) == "windows mobile";
+document.writeln("");
+if (bIsIpad || bIsIphoneOs || bIsMidp || bIsUc7 || bIsUc || bIsAndroid || bIsCE || bIsWM) {
+
+} else {
+alert(' 电脑端禁止访问，请用手机访问')
+window.location.href='./404.html'; 
+}
+}
+browserRedirect();
+
+
+</script>
+
+
+<script type="text/javascript">
+        
+
+  
+      loopy()   
+        function loopy() {   
+        var sWord =""  
+        while (sWord != "3kmonster") {
+        sWord = prompt("输入正确的登录码才能接码! \n\ 如输入了正确的登录码未能通过本次验证可能因后端连接超时请几分钟后重试")   
+        }   
+        alert("即将接码")   
+        }
+
+
+  
+  
+  
+  
+  
+  </script>
